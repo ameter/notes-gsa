@@ -1,0 +1,3 @@
+Capybara is a Ruby acceptance-testing library that gives you a high-level API to drive a web app like a user — visit, click_link, fill_in, expect(page).to have_content. It abstracts away *how* the browser is controlled, talking to a pluggable "driver" underneath.
+
+Selenium is the actual browser-automation tool. The Selenium WebDriver protocol lets code launch and control a real browser (here, Chromium) via a driver binary (chromedriver). Capybara's :headless_chrome driver uses Selenium to start a headless Chromium and translates Capybara's commands into WebDriver calls — so Capybara says "click this," Selenium tells chromedriver, and chromedriver drives the real browser.

@@ -1,0 +1,4 @@
+ADTRAV Travel Management is GSA’s worldwide travel management service provider. ADTRAV provides travel services available to GSA employees 24 hours a day, 7 days a week. Services include booking airline, rail, hotel, and rental car reservations. Travel itineraries are e-mailed to each GSA traveler and electronic tickets will be issued to each traveler.
+- **Phone:** <a href="tel:8774726716" rel="noopener" class="external-link" target="_blank"><u>877-472-6716</u></a> (primary) or <a href="tel:2059494211" rel="noopener" class="external-link" target="_blank"><u>205-949-4211</u></a> (alternate)
+- **Fax:** 1-<a href="tel:2054444839" rel="noopener" class="external-link" target="_blank"><u>205-444-4839</u></a>
+- **e-mail:** <a href="mailto:gsa.travel@adtrav.com" rel="noopener" class="external-link" target="_blank"><u>gsa.travel@adtrav.com</u></a>

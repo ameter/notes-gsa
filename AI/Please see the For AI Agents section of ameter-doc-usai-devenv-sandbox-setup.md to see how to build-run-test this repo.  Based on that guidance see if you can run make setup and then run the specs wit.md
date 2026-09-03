@@ -1,0 +1,1 @@
+Please see the For AI Agents section of ameter-doc/usai/devenv-sandbox-setup.md to see how to build/run/test this repo.  Based on that guidance see if you can run make setup and then run the specs with make test.

@@ -1,0 +1,1 @@
+aws-vault exec sandbox-terraform --debug -- aws sts get-caller-identity

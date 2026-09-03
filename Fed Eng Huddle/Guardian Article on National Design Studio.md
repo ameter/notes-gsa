@@ -1,0 +1,3 @@
+- look at substrate links
+- focusing on "fresh coat of paint"
+- very focused on section 508 compliance

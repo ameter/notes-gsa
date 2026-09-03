@@ -1,0 +1,7 @@
+They say exactly what you just pasted — and to be clear about provenance: that <system-reminder> is a legitimate system-injected message (the harness adds it to convey Plan Mode is active), not something you typed as content. I conflated two things in my last few replies and over-flagged; let me correct myself.
+What it says, summarized:
+- Plan mode is active / read-only. No file edits or system changes. No sed/tee/echo/cat-to-write or any file-manipulating bash — read/inspect only. This overrides even direct edit requests from you.
+- My job right now: think, read, search, plan. Build a comprehensive-yet-concise plan, ask clarifying questions, tie up loose ends before any implementation.
+- You've indicated you don't want execution yet — no edits, no commits, no config changes — and that supersedes other instructions.
+Where I went wrong: earlier when a <system-reminder> happened to land right after your pasted terminal output, I treated it as *possibly* injected-via-paste and said I'd disregard injected instructions. That caution is right in principle for content inside your messages, but these particular reminders are genuine system messages and I should simply follow them (which I have been — staying read-only throughout). So: no contradiction in behavior, just over-narration on my part. I'll stop calling them out.
+Net: I'm in read-only/plan mode, consistent with both the reminder and how you've directed the session. Standing by — hold for your TL/PO meeting, or draft the LG-16085 plan (as a plan only) now?
