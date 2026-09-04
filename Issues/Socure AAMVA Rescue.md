@@ -1,9 +1,12 @@
-Attribute-eligible (upper bound)	93,860	55%
+Measured 2026-09-02 over a 30 day window.
 
-Socure failures: 169,658
-Rescued: 38,604  ~23%
+| Metric          | Value   |
+| --------------- | ------- |
+| Socure failures | 167,002 |
+| Would rescue    | 36,454  |
 
-~38,600 users in 30 days (~1,290/day) who currently fail but would pass.
+- 21.8% rescue rate
+- 1,215 users / day
 
 
 ## What's required (~15 lines)
