@@ -9,6 +9,3 @@ payPeriodBase x .031  **(unknown attachment: com.apple.notes.inlinetextattachmen
 
 FERS-FRAE
 payPeriodBase x .044  **(unknown attachment: com.apple.notes.inlinetextattachment.calculateresult)** 
-
-
-K4Q2GOKQCOZGJEKNQCDIA3OUCXNBQ3MDPLBK45BGT7HJ4PJIT6EW5SNNDVUJ555Y
