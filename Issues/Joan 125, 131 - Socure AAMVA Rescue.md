@@ -1,3 +1,58 @@
+
+- Right now, LN reports failed attributes from resolution, but Socure does not
+- Socure reports verified attributes, which is how we derived failed for Socure?
+- LN does NOT report verified attributes, it only reports failed.
+
+LN returns DriversLicenseVerification with ItemReason: {"Code": "name_not_verified_fail"} — so LN does return a name-specific failure signal, in the reason code.
+
+But it's not a discrete name check. It's a DL-verification check whose reason happens to be a name mismatch. LN has no standalone "first name" or "last name" item the way Socure has firstName/surName fields.
+
+___
+
+Out of scope - 131
+- Enabling socure_kyc in the flag — separate config-only change
+- Names support, which needs the attempts-API enum extended — separate ticket
+- Pre-existing: :unknown isn't in the attempts-API enum (IdvVerificationSubmitted.yml:59-64) yet LN already emits it to partners — 991 events confirmed in prod. Worth its own ticket; this change propagates a known gap rather than creating one.
+
+
+___
+
+>ok, so you are recommending we map socure failed attributes to the same ones that we output from the LN mapper, and any failed attributes we don't currently output from the LN attribute mapper, we map from socure as "unknown", which can't break anything because we already output a bunch of those from the LN attribute mapper currently anyway. Correct??
+
+The mapping direction differs. LN maps check names → attributes. Socure has no check names; it has attribute-shaped fields already. So there's nothing to translate for address, dob, ssn — those pass through directly.
+
+The only mapping needed is for what Socure reports that LN's output vocabulary doesn't include: first_name and last_name → :unknown.
+
+Rest of your statement is right:
+
+Socure's reported values end up being a subset of LN's output vocabulary (address, dob, ssn, unknown)
+:unknown breaks nothing new, since LN already emits it (991 events confirmed)
+:unknown can never match aamva_verified_attributes, so it correctly blocks a rescue
+
+___
+
+Yes. first_name and last_name → :unknown; address, dob, ssn pass through unchanged.
+
+Nothing "changes" for Socure though — it currently reports [] for everything, so all five are new output.
+
+4 of the 6 that Socure returns already exactly match what we map LN failures to
+
+
+
+
+```
+# Counts of prod events where the resolution stage reported unknown among its failed attributes — 991 total across 10 distinct combinations.
+SOURCE "arn:aws:logs:us-west-2:555546682965:log-group:prod_/srv/idp/shared/log/events.log" START=-3h END=0s |
+filter name = 'IdV: doc auth verify proofing results'
+| parse @message '"attributes_requiring_additional_verification":[*]' as attrs
+| filter attrs like /unknown/
+| stats count(*) as n by attrs
+```
+
+
+
+
+
 Measured 2026-09-02 over a 30 day window.
 
 | Metric          | Value   |
